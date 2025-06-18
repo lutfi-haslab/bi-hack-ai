@@ -120,7 +120,7 @@ export function DocumentUpload({
 
       {!uploading && (
         <div className="mt-4 text-center">
-          <Button variant="outline" onClick={() => document.querySelector('input[type="file"]')?.click()}>
+          <Button variant="outline" onClick={() => (document.querySelector('input[type="file"]') as HTMLInputElement).click()}>
             <Upload size={16} className="mr-2" />
             Choose Files
           </Button>
