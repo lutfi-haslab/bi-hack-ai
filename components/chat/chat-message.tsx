@@ -51,10 +51,13 @@ export function ChatMessage({ role, content, citations, isStreaming }: ChatMessa
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
+                // @ts-ignore
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || '');
                   return !inline && match ? (
+                    // @ts-ignore
                     <SyntaxHighlighter
+                    // @ts-ignore
                       style={oneDark}
                       language={match[1]}
                       PreTag="div"
